@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>My Tasks</title>
+</head>
+<body>
+    <header>
+        <h1>My Tasks</h1>
+    </header>
+    <div class="container">
+        <div class="menu">
+            <form action="" id="task_form">
+                <div class="form-control">
+                    <label for="task_title">Title</label>
+                    <input type="text" name="task_title" id="task_title">
+                </div>
+                <div class="form-control">
+                    <label for="task_image">Image</label>
+                    <input type="text" name="task_image" id="task_image">
+                </div>
+                <div class="form-control">
+                    <label for="task_description">Description</label>
+                    <input type="text" name="task_description" id="task_description">
+                </div>
+                <div class="form-control">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        <option value="urgent">Urgent</option>
+                        <option value="normal">Normal</option>
+                        <option value="cool">Cool</option>
+                    </select>
+                </div>
+                <button onclick="addTask()">Create Task</button>
+            </form>
+        </div>
+        <div class="task-container">
+            <h3 class="list-title">To-do list</h3>
+            <div class="task-list" id="task-list">
+                <div class="card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAABI1BMVEUAAAD///88iAxU5BJV6hOqqqooKCi0jv+th/9wWpC6k//z8/MMDAyAgIBb9hKwiv/Amv+Iba06L1IZQwN24fV73uhmv84UJih+7flcqqlDfHZ76Ps1WVZ4eHhWVlb/RYf/S5E/FiaELlitN2epN2onCxf/R4pUHzvwSIvNPHHjQ4LXQX91KUpRzBNU2hIABABKSkpnZ2fl5eXIyMgFAAaQP2BLQVaLc61uX4BlLEHVVINmV3+Xfr9lZWX/VpbFoP+ehsCbm5sLGhq9RnGdRGMAGxmP6/AfDBMYGBgXKCZUJzs5cx8tZRM7Oztj0i1TsSMaNRBMdnh6ztclPUIXDBM1TlE9L1Sukt0qJDNvLElxqKtikZarQ2pOmi5Tpy9PkC69vb1VQjdbAAADjklEQVR4nO3ci1LTQBiG4a22tkKhiCJVTkVoUFHDoYCAgAXkpCggiogc7v8q3AAOlmTDbpsmafs+w0w7JJPufrPd/El2KgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADWxo25AXGRTF4NX78ZGRkc8zci0Zuce6Zt7Lw83kPJ1MSH3ka9R9t1Ytj3RcfVu3hryZC3IsBbbMjl9H+ThUgl/k3If+RJl3439H5Y15JnXgty4mM7k0ppRpTM6YS3JfdobN6zlgrfLsFa6DHwUzT6yfBnO8U16StAMCw7CMkBYBozDimY6KkXyqbcpwpoZVTiWG8v+9aYeWZSuPtOyGnYmSoqw1jxLLlmIrcuNU3dUBVpk6bDa80TDRgOEpSjnAwtrSTesnk9hZ6KkCsurOrWsQiHIkdW7kdewEfew7M2ip83iptz6IAhb8kDb29u9d4vH5O6gdDBAWAYUYc2/UNiRGz/fC9gXedCBjo7dkPtuzDMsW6xZlkftcFk6lMTXzmSgOr/Jz5xOJAbC774Z89JBhpW8H6jkdViTYXfelLJ0sNyc8uFqZAWswUdWcVihaIvS3uOA7cnqYHd3Yiv03hsyPxsGfyVdik8l5Y/SwUA1Yc2/cZOVfXZAxXns1f/cx/7+fnwul9WqCWvBPfsXhuWhlNeBKfndPejzlf/eADfuqwrLXVI4YQllWGW58cD/3oIMK/6qmeBvj6yCVVj2DSsl642DvN+4yjdpWELsjO2M3XYo/z+o4lzH/Oj316xzVssiLAPmYZVE98/u2h3Wpz91Vc3IOmqr3cpsPXpTZ1WFlcllapLL5bpaIyxbHKVr1yJhCbH4MAC/6tGbOuNsaICwDCjCaoT7luEjLAOEZUARVnl6ejD0tsQeE7wBwjJAWAYIy4BifVZJ2LYtbv6uHxdmbQ3ZrIjLitmAKRaG/HnpdizE7x4dJxH0IxT6C0MsJ6w+jUWgfSdNOrCUYVU+v3GyMgqrOSnCWn/lNi/EyVMNB/uh9yIknA0NEJYBRengvbN72m7OiVxFVTq8dhmXE/zpu0qnrRWXdulweTY8q1xNmjwLvb2RUq1W9q6zZFgV64zPGFnO13DcTYZ1/rbSeQQtjpDRBC9uDaRSS42r2kuHlkqLOsvATVhLU9PlaNsSezdhTSYSF5E2Jf4Iy8DWVPu/sNqnGusHmgAAAAAAAAAAAAAAAAAAAAAAAAAAAIDo/QUia/xtIjGm3wAAAABJRU5ErkJggg==" alt="">
+                    <h3 class="card-title">Gravar App Task</h3>
+                    <span class="urgent"><p>Urgent</p></span>
+                    <p class="card-desc">
+                        Gravar um tutorial de como fazer um app de tarefas.
+                    </p>
+                    <div class="card-buttons">
+                        <button class="done" id="done" onclick="completeTask(this)">Done</button>
+                        <button class="delete" id="delete" onclick="deleteTask(this)">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <h3 class="list-title">Done List</h3>
+            <div class="done-list" id="done-list">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
