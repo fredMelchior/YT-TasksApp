@@ -1,7 +1,7 @@
 
 # Tasks Web App
 
-Projeto de criação de gerenciamento de tarefas desenvolvido utitlizando HTML5, CSS3 e JavaScript para fins educativos.
+Projeto de criação e gerenciamento de tarefas desenvolvido utitlizando HTML5, CSS3 e JavaScript para fins educativos.
 
 
 ## Tutorial 📝
